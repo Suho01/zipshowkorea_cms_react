@@ -1,13 +1,186 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+    padding: 0;
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    vertical-align: middle;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    word-break: keep-all;
+    height: 100%;
+}
+
+html {
+    font-size: 1em;
+    height: 100%;
+
+    --C000: #FFF;
+    --C100: #F5F6F7;
+    --C130: #ECEEF0;
+    --C150: #E7E9EC;
+    --C200: #D9DCE0;
+    --C250: #CAD0D5;
+    --C300: #BCC3CA;
+    --C350: #AEB6BE;
+
+    --CT700: #666D6D;
+    --CT800: #4D5353;
+    --CT900: #353838;
+    --CT1000: #1C1E1E;
+
+    --RED: #BB251E;
+    --BLUE: #286FB7;
+
+    --CARD: #DBE7F3;
+}
+
+input[type=text], input[type=password] {
+    color: var(--CT1000);
+    border: solid 1px var(--C150);
+    background-color: var(--C000);
+    border-radius: 6px;
+    padding: 0 12px;
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #cad0d5;
+    background-color: #e7e9ec;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    color: #666d6d;
+}
+
+input[type='radio']:checked {
+    background-color: #353838;
+    border: 6px solid white;
+    box-shadow: 0 0 0 1.6px #353838;
+}
+
+input[type='radio']:checked:disabled {
+    background-color: #cad0d5;
+    border: 6px solid #e7e9ec;
+    box-shadow: 0 0 0 1.6px #cad0d5;
+}
+
+input:focus {
+    outline: solid 1px var(--C350);
+}
+
+input, input::placeholder {
+    font-family: inherit;
+    font-weight: 400;
+}
+
+input::placeholder {
+    color: var(--C300);
+}
+
+input:disabled {
+    background-color: var(--C150);
+    color: var(--C350);
+    border: 1px solid var(--C200);
+}
+
+input[type=checkbox] {
+    border-radius: 4px;
+    accent-color: var(--CT900);
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    border: solid 1px var(--C200);
+    position: relative;
+    outline: none;
+}
+
+@layer utilities {
+    .w-inherit {
+        width: inherit;
+    }
+
+    .min-w-inherit {
+        min-width: inherit;
+    }
+}
+
+.modalEditSelect .css-hlgwow {
+    padding: 0;
+}
+
+.modalEditSelect #react-select-3-placeholder,
+.modalEditSelect .css-1dimb5e-singleValue {
+    font-weight: bold;
+    color: #8E949A;
+}
+
+.ql-editor {
+    background-color: var(--CT1000);
+    color: var(--C000);
+    padding: 40px 80px;
+}
+
+.ql-editor.ql-blank::before {
+    color: #999999;
+    font-style: normal;
+    /*font-size: 18px;*/
+    font-weight: 400;
+}
+
+.ql-container.ql-snow {
+    border: none;
 }
